@@ -5,10 +5,16 @@ import java.util.Arrays;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Pointcut;
 
 @Aspect
 public class LoggingAspect {
 
+	@Pointcut("execution(* com.customer.CustomerBo.addCustomer(String)) and args(name)")
+	public void customer(){
+		
+	}
+	
 	public void logBefore(String name) {
 
 		System.out.println("logBefore() is running!");
