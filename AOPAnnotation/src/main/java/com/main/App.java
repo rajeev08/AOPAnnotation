@@ -12,13 +12,13 @@ public class App {
 				"app-context.xml");
 
 		CustomerBo customer = (CustomerBo) appContext.getBean("customerBo");
-		// customer.addCustomer("1");
+		customer.addCustomer();
 
-		// customer.addCustomerReturnValue();
+		//customer.addCustomerReturnValue();
 
 		// customer.addCustomerThrowException();
 
-		customer.addCustomerAround("mkyong");
+		//customer.addCustomerAround("mkyong");
 
 	}
 
