@@ -2,7 +2,7 @@ package com.customer;
 
 public interface CustomerBo {
 
-	void addCustomer(String name);
+	void addCustomer();
 
 	String addCustomerReturnValue();
 
