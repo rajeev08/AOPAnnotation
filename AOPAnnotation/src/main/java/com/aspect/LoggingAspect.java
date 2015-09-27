@@ -5,6 +5,7 @@ import java.util.Arrays;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 
 @Aspect
@@ -15,6 +16,7 @@ public class LoggingAspect {
 		
 	}
 	
+	@Before("customer()")
 	public void logBefore(String name) {
 
 		System.out.println("logBefore() is running!");
