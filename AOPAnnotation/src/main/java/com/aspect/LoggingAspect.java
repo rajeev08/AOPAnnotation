@@ -11,12 +11,12 @@ import org.aspectj.lang.annotation.Pointcut;
 @Aspect
 public class LoggingAspect {
 
-	@Pointcut("execution(* com.customer.CustomerBo.addCustomer(String)) and args(name)")
-	public void customer(){
+	@Pointcut("execution(* com.customer."+"CustomerBo.addCustomer(String)) && args(name)")
+	public void customer(String name){
 		
 	}
 	
-	@Before("customer()")
+	@Before("customer(name)")
 	public void logBefore(String name) {
 
 		System.out.println("logBefore() is running!");
@@ -24,7 +24,7 @@ public class LoggingAspect {
 		System.out.println("******");
 	}
 
-	public void logAfter(JoinPoint joinPoint) {
+/*	public void logAfter(JoinPoint joinPoint) {
 
 		System.out.println("logAfter() is running!");
 		System.out.println("hijacked : " + joinPoint.getSignature().getName());
@@ -65,5 +65,5 @@ public class LoggingAspect {
 		System.out.println("******");
 
 	}
-
+*/
 }
